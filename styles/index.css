@@ -1,0 +1,167 @@
+:root {
+  --accent-color: #1992d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    "side header"
+    "side main";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 40px;
+
+  box-shadow: 0 0 4px #8f9398
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search {
+  width: 100%;
+  height: 25px;
+  border-radius: 15px;
+  background-color: #e2e8f0;
+  border: 0;
+}
+
+.welcome {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome > img {
+  height: 50px;
+}
+
+.welcome > p {
+  display: grid;
+}
+
+.profile-interactive {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-interactive img{
+  height: 40px;
+}
+
+.dashboard-interactive form {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 20px;
+}
+
+.dashboard-interactive form button{
+  padding: 6px 15px;
+  border-radius: 15px;
+  width: 75px;
+
+  border: 0;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.sidebar {
+  grid-area: side;  
+  display: grid;
+  gap: 40px;
+  padding-left: 10px;
+  align-content: start;
+
+  background-color: var(--accent-color);
+  color: white;
+  height: 100vh;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: inherit;
+}
+
+.logo svg {
+  filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(240deg) brightness(107%) contrast(101%);
+}
+
+.side-interactive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  color: inherit;
+}
+
+.side-interactive a { 
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 20px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.side-interactive svg {
+  filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(240deg) brightness(107%) contrast(101%);
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "projects announcment"
+    "projects trending";
+  gap: 10px;
+}
+
+main .projects{
+  grid-area: projects;
+}
+
+main .projects-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: space-between;
+  gap: 10px;
+}
+
+header, .sidebar {
+  padding-top: 10px;
+}
+
+/* SVG Icons */
+svg {
+  height: 20px;
+}
+
+.logo > svg {
+  height: 40px;
+}
